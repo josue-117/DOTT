@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Hello from GitHub') {
             steps {
-                echo 'Hello from Github'
+                echo 'Hello 3rd Commit'
             }
         }
     }
