@@ -17,9 +17,9 @@ pipeline {
 	}
       stage('Front end') {
 	      agent {
-		sudo docker{ image 'node:14-alpine' 
-		             args '-v /var/run/docker.sock:/var/run/docker.sock'
-			     args '-p 8000:8000' } 
+		docker{ image 'node:14-alpine' 
+		        args '-v /var/run/docker.sock:/var/run/docker.sock'    
+			args '-p 8000:8000' } 
 	      }
 	    steps {
               	sh 'node --version'
