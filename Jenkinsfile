@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Hello from GitHub') {
             steps {
-                echo 'Hello'
+                echo 'Hello World'
 		//sh 'npm install'
             }
        
