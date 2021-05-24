@@ -5,7 +5,7 @@ pipeline {
         stage('Hello from GitHub') {
             steps {
                 echo 'Hello 3rd Commit'
-		sh 'npm install'
+		//sh 'npm install'
             }
        
 	 }
