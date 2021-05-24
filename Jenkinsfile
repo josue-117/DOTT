@@ -17,7 +17,7 @@ pipeline {
 	}
       stage('Front end') {
 	      agent {
-		docker{ image '- p 8000:8000 node:14-alpine' } 
+		docker{ image -p 8000:8000 'node:14-alpine' } 
 	      }
 	    steps {
               	sh 'node --version'
