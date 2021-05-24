@@ -6,6 +6,12 @@ pipeline {
             steps {
                 echo 'Hello 3rd Commit'
             }
-        }
+       
+	 }
+	stage('Deployment') {
+	    steps {
+		echo 'Hello World'
+	   }
+	}
     }
 }
