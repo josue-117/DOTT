@@ -9,7 +9,7 @@ pipeline {
             }
        
 	 }
-	stage('Testing Stage Sonarqube') {
+	stage('Testing Stage Sonarqube!') {
 	    steps {
 		echo 'This is the Last Test'
 	   }
