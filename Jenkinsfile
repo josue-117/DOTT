@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Hello from GitHub') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World!'
 		//sh 'npm install'
             }
        
 	 }
 	stage('Testing Stage') {
 	    steps {
-		echo 'This is the Latest Newest Test'
+		echo 'This is the Last Test'
 	   }
 	
 	}
