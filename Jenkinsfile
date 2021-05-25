@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello from GitHub Webhook') {
+        stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
 		//sh 'npm install'
             }
        
 	 }
-	stage('Testing Stage') {
+	stage('Testing Stage Sonarqube') {
 	    steps {
 		echo 'This is the Last Test'
 	   }
