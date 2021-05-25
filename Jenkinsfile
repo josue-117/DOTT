@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello from GitHub') {
+        stage('Hello from GitHub Webhook') {
             steps {
                 echo 'Hello World!'
 		//sh 'npm install'
