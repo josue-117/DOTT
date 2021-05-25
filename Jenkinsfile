@@ -11,7 +11,7 @@ pipeline {
 	 }
 	stage('Test') {
 	    steps {
-		echo 'This is a New Test'
+		echo 'This is the Newest Test'
 	   }
 	
 	}
