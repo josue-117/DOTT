@@ -9,7 +9,7 @@ pipeline {
             }
        
 	 }
-	stage('Test') {
+	stage('Testing Stage') {
 	    steps {
 		echo 'This is the Newest Test'
 	   }
