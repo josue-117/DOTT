@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		sh 'npm cache clean'     
+	
             }
        
 	 }
@@ -15,7 +15,7 @@ pipeline {
 		echo 'This is the Building Stage'
 		    dir("cidr_convert_api/node/") { 
 		sh 'npm rm -rf node_modules'
-		sh 'cache clean'
+		sh 'npm cache clean'
 		sh 'npm install'
 		    }
 		}
