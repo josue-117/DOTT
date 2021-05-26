@@ -13,6 +13,7 @@ pipeline {
 	stage('Testing Stage Sonarqube!') {
 	    steps {
 		echo 'This is the Last Test'
+		dir('cidr_covert_api/node/')
 		sh 'npm install' 
 	   }
 	
