@@ -16,7 +16,7 @@ pipeline {
 		    dir("cidr_convert_api/node/") { 
 		sh 'npm rm -rf node_modules'
 		sh 'npm install'
-		sh 'npm run dev'
+		//sh 'npm run dev'
 		    }
 		}
 	
@@ -25,7 +25,7 @@ pipeline {
 	stage('Testing Process!') {
 	    steps {
 		echo 'This is the Testing Stage'
-		 
+		sh 'npm test' 
 		}
 	
 	}
