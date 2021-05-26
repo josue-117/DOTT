@@ -1,2 +1,2 @@
 "This is other Test from the Webhook"
-"Hello from Github"
+"Hello from Github!"
