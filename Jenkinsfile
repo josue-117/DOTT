@@ -5,8 +5,8 @@ pipeline {
         stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
-		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		//sh 'npm install'
+		//git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
+		sh 'npm install' 
             }
        
 	 }
