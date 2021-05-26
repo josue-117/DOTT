@@ -25,7 +25,9 @@ pipeline {
 	stage('Testing Process!') {
 	    steps {
 		echo 'This is the Testing Stage'
+		dir("cidr_convert_api/node/") {
 		sh 'npm test' 
+			}
 		}
 	
 	}
