@@ -22,7 +22,33 @@ pipeline {
 	
 	}
 	    
-	stage('Testing Process!') {
+	
+	stage('Sonarqube') {
+    		environment {
+        		scannerHome = tool 'sonarscanner'
+    				}
+    		steps {
+        		withSonarQubeEnv('SonarQube') {
+            			sh "${scannerHome}/bin/sonar-scanner"
+        						}
+        	timeout(time: 10, unit: 'MINUTES') {
+            		waitForQualityGate abortPipeline: true
+      							  }
+    }
+}
+    /*stage('SonarQube Testing!') {
+	    steps {
+		echo 'This is the Testing with SonarQube'
+		dir("cidr_convert_api/node/") {
+		withSonarQubeEnv('My SonarQube Server') {
+          
+              }
+			}
+		}
+	
+	}*/
+	    
+	/*stage('Testing Process!') {
 	    steps {
 		echo 'This is the Testing Stage'
 		dir("cidr_convert_api/node/") {
@@ -30,7 +56,8 @@ pipeline {
 			}
 		}
 	
-	}
+	}*/
+	
       /*stage('Front end') {
 	      agent {
 		docker{ //args '-v /var/run/docker.sock:/var/run/docker.sock' 
