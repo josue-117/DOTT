@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World!'
 		sh 'npm cache clean'
-		// git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
+		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
 		    
             }
        
