@@ -6,13 +6,14 @@ pipeline {
             steps {
                 echo 'Hello World!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		sh 'npm install' 
+		
             }
        
 	 }
 	stage('Testing Stage Sonarqube!') {
 	    steps {
 		echo 'This is the Last Test'
+		sh 'npm install' 
 	   }
 	
 	}
