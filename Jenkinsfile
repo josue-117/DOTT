@@ -2,7 +2,7 @@ pipeline {
     agent any
 	tools {nodejs 'NodeJS'}
     stages {
-        stage('GitHub Webhook!') {
+        stage('GitHub Webhook!!') {
             steps {
                 echo 'Hello World!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
