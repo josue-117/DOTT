@@ -5,6 +5,7 @@ pipeline {
         stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
+		git 'https://github.com/josue-117/DOTT.git'
 		//sh 'npm cache clean'    
 		//git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
 		    
