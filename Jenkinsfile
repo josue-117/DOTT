@@ -1,6 +1,6 @@
 pipeline {
     agent any
-	tools{nodejs 'nodejs NodeJS'}
+	tools {nodejs 'nodejs NodeJS'}
     stages {
         stage('Hello from GitHub Webhook!') {
             steps {
