@@ -15,9 +15,10 @@ pipeline {
 	stage('Testing Stage Sonarqube!') {
 	    steps {
 		echo 'This is the Last Test'
-		dir("cidr_convert_api/node/")
+		    dir("cidr_convert_api/node/") { 
 		sh 'npm install' 
-	   }
+		    }
+		    }
 	
 	}
       /*stage('Front end') {
