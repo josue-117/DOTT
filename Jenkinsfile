@@ -5,18 +5,18 @@ pipeline {
         stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
-		git 'https://github.com/josue-117/DOTT.git'
-		//sh 'npm cache clean'    
-		//git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		    
+		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
+		//sh 'npm cache clean'     
             }
        
 	 }
-	stage('Testing Stage Sonarqube!') {
+	stage('Building Process!') {
 	    steps {
-		echo 'This is the Last Test'
+		echo 'This is the Building Stage'
 		    dir("cidr_convert_api/node/") { 
-		sh 'npm install' 
+		sh 'npm rm -rf node_modules'
+		sh 'cache clean'
+		sh 'npm install'
 		    }
 		}
 	
