@@ -15,7 +15,7 @@ pipeline {
 		echo 'This is the Building Stage'
 		    dir("cidr_convert_api/node/") { 
 		sh 'npm rm -rf node_modules'
-		sh 'npm cache clean'
+		// sh 'npm cache clean'
 		sh 'npm install'
 		    }
 		}
