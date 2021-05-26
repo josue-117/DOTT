@@ -5,7 +5,7 @@ pipeline {
         stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
-		git 'https://github.com/josue-117/DOTT.git'
+		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
 		//sh 'npm install'
             }
        
@@ -16,12 +16,6 @@ pipeline {
 	   }
 	
 	}
-	stage('NodeJs Project') {
-	    steps {
-		npm install 
-	   }
-	
-	} 
       /*stage('Front end') {
 	      agent {
 		docker{ //args '-v /var/run/docker.sock:/var/run/docker.sock' 
