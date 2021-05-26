@@ -20,6 +20,14 @@ pipeline {
 		}
 	
 	}
+	    
+	stage('Testing Process!') {
+	    steps {
+		echo 'This is the Testing Stage'
+		 
+		}
+	
+	}
       /*stage('Front end') {
 	      agent {
 		docker{ //args '-v /var/run/docker.sock:/var/run/docker.sock' 
