@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		sh 'npm cahe verify'
+		sh 'npm cache verify'
             }
        
 	 }
