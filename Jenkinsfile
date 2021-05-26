@@ -5,10 +5,9 @@ pipeline {
         stage('Hello from GitHub Webhook!') {
             steps {
                 echo 'Hello World!'
-		sh 'npm cache verify'
-		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
-		
-		
+		sh 'npm cache clean'
+		// git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
+		    
             }
        
 	 }
@@ -18,7 +17,7 @@ pipeline {
 		    dir("cidr_convert_api/node/") { 
 		sh 'npm install' 
 		    }
-		    }
+		}
 	
 	}
       /*stage('Front end') {
