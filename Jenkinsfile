@@ -11,7 +11,7 @@ pipeline {
        
 	 }
 	
-	stage('Building Process') {
+	stage('Building Stage') {
 	    steps {
 		echo 'This is the Building Stage'
 		    dir("cidr_convert_api/node/") { 
@@ -24,7 +24,7 @@ pipeline {
 	}
 	    
 	
-	stage('Sonarqube Static Code Analysis') {
+	stage('Code Analysis Stage') {
     		environment {
         		SCANNER_HOME = tool 'SonarQubeScanner';
     		}
