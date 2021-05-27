@@ -32,7 +32,7 @@ pipeline {
         		withSonarQubeEnv('SonarQube')
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
-            			sh "${SCANNER_HOME}/bin/sonar-scanner"
+            			sh "${SCANNER_HOME}/bin/sonar-scanner -X"
         						}
         	timeout(time: 10, unit: 'MINUTES') {
             		waitForQualityGate abortPipeline: true
