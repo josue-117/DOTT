@@ -30,6 +30,7 @@ pipeline {
     		}
 		
     		steps {
+			echo 'This is the Static Code Testing'
         		withSonarQubeEnv('SonarQube')
 			
 			{	println "${env.SONAR_CONFIG_NAME}"
@@ -41,7 +42,7 @@ pipeline {
 			}
 	}
     
-	    stage('Testing Process!') {
+	    stage('Unit Testing') {
 	    steps {
 		echo 'This is the Testing Stage'
 		dir("cidr_convert_api/node/") {
