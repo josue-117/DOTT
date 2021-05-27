@@ -38,20 +38,10 @@ pipeline {
         						}
         	// timeout(time: 10, unit: 'MINUTES') {
             		// waitForQualityGate abortPipeline: true
-      							  }
+      							 // }
     }
 }
-    /*stage('SonarQube Testing!') {
-	    steps {
-		echo 'This is the Testing with SonarQube'
-		dir("cidr_convert_api/node/") {
-		withSonarQubeEnv('My SonarQube Server') {
-          
-              }
-			}
-		}
-	
-	}*/
+    
 	    
 	/*stage('Testing Process!') {
 	    steps {
