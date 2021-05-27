@@ -25,11 +25,14 @@ pipeline {
 	
 	stage('Sonarqube !!') {
     		environment {
-        		scannerHome = tool 'SonarQubeScanner';
-    				}
+        		SCANNER_HOME = tool 'SonarQubeScanner';
+    		}
+		
     		steps {
-        		withSonarQubeEnv('SonarQube') {
-            			sh "${scannerHome}/bin/sonar-scanner"
+        		withSonarQubeEnv('SonarQube')
+			{	println "${env.SONAR_CONFIG_NAME}"
+				println "${env.SONAR_HOST_URL}"
+            			sh "${SCANNER_HOME}/bin/sonar-scanner"
         						}
         	timeout(time: 10, unit: 'MINUTES') {
             		waitForQualityGate abortPipeline: true
