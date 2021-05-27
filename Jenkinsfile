@@ -34,7 +34,7 @@ pipeline {
 			
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
-			 	println="${env.BUILD_NUMBER}"
+			 	println "${env.BUILD_NUMBER}"
             			sh "pwd"
 			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
         						}
