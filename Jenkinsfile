@@ -2,6 +2,7 @@ pipeline {
     agent any
 	tools {nodejs 'NodeJS'}
     stages {
+	    
         stage('GitHub Webhook') {
             steps {
                 echo 'Hello World!'
@@ -33,25 +34,21 @@ pipeline {
 			
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
+			 	println="${env.BUILD_NUMBER}"
             			sh "pwd"
-			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN} -Dsonar.version=${env.BUILD_NUMBER}"
+			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
         						}
-        	// timeout(time: 10, unit: 'MINUTES') {
-            		// waitForQualityGate abortPipeline: true
-      							 // }
-    }
-}
+			}
+	}
     
-	    
-	/*stage('Testing Process!') {
+	    stage('Testing Process!') {
 	    steps {
 		echo 'This is the Testing Stage'
 		dir("cidr_convert_api/node/") {
-		//sh 'npm test' 
+		sh 'npm test' 
 			}
 		}
-	
-	}*/
+	}
 	
       /*stage('Front end') {
 	      agent {
