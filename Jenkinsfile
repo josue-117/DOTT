@@ -42,14 +42,14 @@ pipeline {
 			}
 	}
     
-	    stage('Unit Testing') {
+	    /*stage('Unit Testing') {
 	    steps {
 		echo 'This is the Testing Stage'
 		dir("cidr_convert_api/node/") {
 		sh 'npm test' 
 			}
 		}
-	}
+	}*/
 	
       /*stage('Front end') {
 	      agent {
