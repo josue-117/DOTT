@@ -30,7 +30,7 @@ pipeline {
     		}
 		
     		steps {
-			echo 'This is the Static Code Testing'
+			echo 'This is the Static Code Testing using SonarQube'
         		withSonarQubeEnv('SonarQube')
 			
 			{	println "${env.SONAR_CONFIG_NAME}"
