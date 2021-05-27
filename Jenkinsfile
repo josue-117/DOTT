@@ -34,7 +34,7 @@ pipeline {
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
             			sh "pwd"
-			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
+			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN} -Dsonar.version=${env.BUILD_NUMBER}"
         						}
         	// timeout(time: 10, unit: 'MINUTES') {
             		// waitForQualityGate abortPipeline: true
