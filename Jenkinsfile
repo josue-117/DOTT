@@ -2,7 +2,7 @@ pipeline {
     agent any
 	tools {nodejs 'NodeJS'}
     stages {
-        stage('GitHub Webhook!') {
+        stage('GitHub Webhook') {
             steps {
                 echo 'Hello World!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
@@ -10,7 +10,7 @@ pipeline {
        
 	 }
 	
-	stage('Building Process!') {
+	stage('Building Process') {
 	    steps {
 		echo 'This is the Building Stage'
 		    dir("cidr_convert_api/node/") { 
@@ -23,7 +23,7 @@ pipeline {
 	}
 	    
 	
-	stage('Sonarqube !!') {
+	stage('Sonarqube Static Code Analysis') {
     		environment {
         		SCANNER_HOME = tool 'SonarQubeScanner';
     		}
@@ -34,10 +34,10 @@ pipeline {
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
             			sh "pwd"
-			 	sh "${SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=368e8589ad247fb084843826a70148600af8a7bc"
+			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
         						}
-        	timeout(time: 10, unit: 'MINUTES') {
-            		waitForQualityGate abortPipeline: true
+        	// timeout(time: 10, unit: 'MINUTES') {
+            		// waitForQualityGate abortPipeline: true
       							  }
     }
 }
