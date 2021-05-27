@@ -30,10 +30,11 @@ pipeline {
 		
     		steps {
         		withSonarQubeEnv('SonarQube')
-			dir("cidr_convert_api/node/")
+			
 			{	println "${env.SONAR_CONFIG_NAME}"
 				println "${env.SONAR_HOST_URL}"
-            			sh "${SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=FinalProject -Dsonar.sources=. Dsonar.login=368e8589ad247fb084843826a70148600af8a7bc"
+            			sh "pwd"
+			 	sh "${SCANNER_HOME}/bin/sonar-scanner -X -Dsonar.projectKey=FinalProject -Dsonar.sources=. Dsonar.login=368e8589ad247fb084843826a70148600af8a7bc"
         						}
         	timeout(time: 10, unit: 'MINUTES') {
             		waitForQualityGate abortPipeline: true
