@@ -5,7 +5,7 @@ pipeline {
 	    
         stage('GitHub Webhook') {
             steps {
-                echo 'Hello World from GitHub!!'
+                echo 'Hello World from GitHub!'
 		echo 'This is a New Comment!'
 		git([url: 'https://github.com/josue-117/DOTT.git', branch: 'master'])
             }
