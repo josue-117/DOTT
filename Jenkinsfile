@@ -26,24 +26,24 @@ pipeline {
 	    
 	
 	stage('Code Analysis Stage') {
-    		environment {
+    	    environment {
         		SCANNER_HOME = tool 'SonarQubeScanner';
     		}
 		
-    		steps {
-			echo 'This is the Static Code Testing using SonarQube'
-        		withSonarQubeEnv('SonarQube')
+    	    steps {
+		echo 'This is the Static Code Testing using SonarQube'
+        	withSonarQubeEnv('SonarQube')
 			
-			{	println "${env.SONAR_CONFIG_NAME}"
-				println "${env.SONAR_HOST_URL}"
-			 	println "${env.BUILD_NUMBER}"
-            			sh "pwd"
-			 	sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
+		{	println "${env.SONAR_CONFIG_NAME}"
+			println "${env.SONAR_HOST_URL}"
+			println "${env.BUILD_NUMBER}"
+            		sh "pwd"
+			sh "${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=FinalProject -Dsonar.sources=. -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
         						}
 			}
 	}
     
-	    /*stage('Unit Testing') {
+	/*stage('Unit Testing') {
 	    steps {
 		echo 'This is the Testing Stage'
 		dir("cidr_convert_api/node/") {
